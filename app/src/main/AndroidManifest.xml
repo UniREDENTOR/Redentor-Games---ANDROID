@@ -6,16 +6,17 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/redentor"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/redentor"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FullDescriptionGameActivity"></activity>
+        <activity android:name=".DetailsTeamActivity"></activity>
+        <activity android:name=".FullDescriptionGameActivity" />
         <activity android:name=".DescriptionGamesActivity" />
         <activity
             android:name=".HomeActivity"
-            android:label="@string/title_activity_home">
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,6 +24,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".DetailsTeamActivity">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:layout_marginTop="5dp"
+            android:id="@+id/imgLogoTeam"
+            android:layout_width="120dp"
+            android:layout_height="100dp"
+            app:srcCompat="@mipmap/ic_launcher" />
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginRight="10dp"
+                android:fontFamily="@font/carter_one"
+                android:gravity="center"
+                android:includeFontPadding="true"
+                android:text="TUDO PELO PONTO - TPP"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/txtNameLeaderTeam"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="César Junior Liberatori"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_marginLeft="5dp"
+                android:id="@+id/txtParticipations"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Participacoes" />
+
+            <TextView
+                android:layout_marginLeft="5dp"
+                android:id="@+id/txtPositionRanking"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Colocação" />
+
+        </LinearLayout>
+
+
+
+
+
+        </LinearLayout>
+
+    <TextView
+
+        android:layout_marginTop="20dp"
+        android:id="@+id/txtDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="7dp"
+        android:text="Mais uma Redentor Games se encerra, e novamente, só temos a agradecer todas as amizades construídas e todo o esforço dedicado ao Colorado. Saímos felizes e com a certeza de que fizemos nossa parte e o jogo limpo prevaleceu. Obrigado por tudo, torcida colorada! Vocês são os responsáveis pela nossa paixão vermelha e branca. Até a próxima! "
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/carter_one"
+        android:gravity="center"
+        android:text="Integrantes"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/txtMembers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Participantes" />
+
+
+</LinearLayout>
+

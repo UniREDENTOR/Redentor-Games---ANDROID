@@ -39,15 +39,15 @@ public class GamesFragment extends Fragment {
 
         listViewDias = view.findViewById(R.id.lvDias);
 
-        ArrayList teste = new ArrayList();
+        ArrayList dias = new ArrayList();
 
-        teste.add("Sábado - 15/06/2019");
-        teste.add("Domingo - 16/06/2019");
-        teste.add("Segunda - 17/06/2019");
-        teste.add("Terça - 18/06/2019");
-        teste.add("Quarta - 19/06/2019");
+        dias.add("Sábado - 15/06/2019");
+        dias.add("Domingo - 16/06/2019");
+        dias.add("Segunda - 17/06/2019");
+        dias.add("Terça - 18/06/2019");
+        dias.add("Quarta - 19/06/2019");
 
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String >(getContext(),android.R.layout.simple_list_item_1, teste);
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String >(getContext(),android.R.layout.simple_list_item_1, dias);
 
         listViewDias.setAdapter(arrayAdapter);
 

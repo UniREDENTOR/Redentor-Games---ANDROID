@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.support.annotation.NonNull;
+import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.TextView;
 
@@ -13,6 +14,9 @@ import com.redentor.redgames.fragment.PhotoFragment;
 
 public class HomeActivity extends AppCompatActivity {
     private TextView mTextMessage;
+    private Toolbar toolbar;
+    private TextView txtToolbar;
+
 
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -26,15 +30,19 @@ public class HomeActivity extends AppCompatActivity {
                 case R.id.navigation_home:
 
                     getSupportFragmentManager().beginTransaction().replace(R.id.frame, new PhotoFragment()).commit();
+                    txtToolbar.setText("Redentor Games 2018");
+
                     break;
 
                 case R.id.navigation_dashboard:
 
                     getSupportFragmentManager().beginTransaction().replace(R.id.frame, new GamesFragment()).commit();
+                    txtToolbar.setText("Programação");
                     break;
 
                 case R.id.navigation_notifications:
                     getSupportFragmentManager().beginTransaction().replace(R.id.frame, new EquipesFragment()).commit();
+                    txtToolbar.setText("Equipes");
                     break;
 
             }
@@ -52,6 +60,15 @@ public class HomeActivity extends AppCompatActivity {
         mTextMessage = findViewById(R.id.message);
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         getSupportFragmentManager().beginTransaction().replace(R.id.frame,new PhotoFragment()).commit();
+        txtToolbar = findViewById(R.id.txtToolbar);
+
+        txtToolbar.setText("Redentor Games 2018");
+
+        toolbar = findViewById(R.id.toolbar);
+
+
+
+
     }
 
 
