@@ -6,8 +6,10 @@ import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.redentor.redgames.adapter.DescriptionAdapter;
@@ -24,6 +26,8 @@ public class DescriptionGamesActivity extends AppCompatActivity {
 
     int position = 0;
     private RecyclerView recyclerViewDescriptionGames;
+    private TextView txtTool;
+    private Toolbar toolbar;
 
 
 
@@ -33,17 +37,23 @@ public class DescriptionGamesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_description_games);
         inilicializarComponentes();
 
+        txtTool.setText("Modalidades");
+
+
+
+
+
         Intent i = getIntent();
-        position = i.getExtras().getInt("idgames") + 1;
+        position = i.getExtras().getInt("idgames") + 4;
 
 
        recyclerViewDescriptionGames.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
        recyclerViewDescriptionGames.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
 
 
-        GameDescription gameDescription = new GameDescription();
-        gameDescription.setName("FUTEBOL");
-        gameDescription.setDescription("FUTEBOL");
+        //GameDescription gameDescription = new GameDescription();
+        //gameDescription.setName("FUTEBOL");
+        //gameDescription.setDescription("FUTEBOL");
 
 
 
@@ -75,5 +85,7 @@ public class DescriptionGamesActivity extends AppCompatActivity {
 
     public void inilicializarComponentes() {
         recyclerViewDescriptionGames = findViewById(R.id.recyclerDescriptionGames);
+        toolbar = findViewById(R.id.toolbar);
+        txtTool = findViewById(R.id.txtToolbar);
     }
 }

@@ -32,8 +32,16 @@ public interface ApiREST {
             "Content-Type: application/json",
             "Accept: application/json"
     })
-    @GET("days/{id}")
-    Call<List<Equipe>> listEquipe(@Path("id") int idgame);
+    @GET("teams")
+    Call<List<Equipe>> listEquipe();
+
+
+
+    //ranking
+    //events
+
+
+
 
 
 

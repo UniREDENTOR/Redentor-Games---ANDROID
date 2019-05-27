@@ -1,14 +1,17 @@
 package com.redentor.redgames.model;
 
-public class Equipe {
+import java.io.Serializable;
+
+public class Equipe implements Serializable {
 
     private String logo;
+    private int id = 0;
     private String name;
     private String description;
-    private String leaderName;
+    private String leader;
     private String memberNames;
-    private int numberParticipations;
-    private int placing;
+    private int participations = 0;
+    private String  placing;
 
     public Equipe() {}
 
@@ -36,19 +39,19 @@ public class Equipe {
         this.description = description;
     }
 
-    public String getLeaderName() { return leaderName; }
+    public String getLeader() { return leader; }
 
-    public void setLeaderName(String leaderName) { this.leaderName = leaderName; }
+    public void setLeader(String leader) { this.leader = leader; }
 
     public String getMemberNames() { return memberNames; }
 
     public void setMemberNames(String memberNames) { this.memberNames = memberNames; }
 
-    public int getNumberParticipations() { return numberParticipations; }
+    public int getParticipations() { return participations; }
 
-    public void setNumberParticipations(int numberParticipations) { this.numberParticipations = numberParticipations; }
+    public void setParticipations(int participations) { this.participations = participations; }
 
-    public int getPlacing() { return placing; }
+    public String getPlacing() { return placing; }
 
-    public void setPlacing(int placing) { this.placing = placing; }
+    public void setPlacing(String placing) { this.placing = placing; }
 }

@@ -41,11 +41,11 @@ public class GamesFragment extends Fragment {
 
         ArrayList dias = new ArrayList();
 
-        dias.add("Sábado - 15/06/2019");
-        dias.add("Domingo - 16/06/2019");
-        dias.add("Segunda - 17/06/2019");
-        dias.add("Terça - 18/06/2019");
-        dias.add("Quarta - 19/06/2019");
+        dias.add("Dia 01 - Sábado - 15/06/2019");
+        dias.add("Dia 02 - Domingo - 16/06/2019");
+        dias.add("Dia 03 - Segunda - 17/06/2019");
+        dias.add("Dia 04 - Terça - 18/06/2019");
+        dias.add("Dia 05 - Quarta - 19/06/2019");
 
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String >(getContext(),android.R.layout.simple_list_item_1, dias);
 

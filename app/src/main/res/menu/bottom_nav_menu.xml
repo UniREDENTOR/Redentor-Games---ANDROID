@@ -16,4 +16,16 @@
         android:icon="@drawable/ic_iconfinder_17_team_group_meeting_business_3964128"
         android:title="@string/equipe_names" />
 
+    <item
+        android:id="@+id/navigation_ranking"
+        android:icon="@drawable/ic_iconfinder_trophy_309005"
+        android:title="@string/ranking"
+
+        />
+
+    <item
+        android:id="@+id/navigation_vote"
+        android:icon="@drawable/vote"
+        android:title="@string/vote" />
+
 </menu>

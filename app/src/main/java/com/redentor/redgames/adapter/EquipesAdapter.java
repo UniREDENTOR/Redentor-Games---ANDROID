@@ -27,9 +27,9 @@ public class EquipesAdapter extends RecyclerView.Adapter<EquipesAdapter.EquipesV
     private TextView equipeDescription;
     private List<Equipe> equipeList;
 
-    public EquipesAdapter(Context context, List<Equipe> teste) {
+    public EquipesAdapter(Context context) {
         this.context = context;
-        this.equipeList = teste;
+        this.equipeList = new ArrayList<>();
     }
 
     @NonNull
@@ -42,19 +42,18 @@ public class EquipesAdapter extends RecyclerView.Adapter<EquipesAdapter.EquipesV
     @Override
     public void onBindViewHolder(@NonNull EquipesViewHolder equipesViewHolder, int i) {
         Equipe equipe = equipeList.get(i);
-
-
-
-
-        equipeName.setText(equipe.getName());
-        equipeDescription.setText(equipe.getDescription());
         Picasso.get().load(equipe.getLogo()).into(equipeLogo);
+        equipeDescription.setText(equipe.getDescription());
+        equipeName.setText(equipe.getName());
+
+
 
         equipesViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(context, "Trocar para tela da equipe", Toast.LENGTH_SHORT).show();
-                Intent i = new Intent(context.getApplicationContext(), DetailsTeamActivity.class);
+                Intent i = new Intent(context, DetailsTeamActivity.class);
+                i.putExtra("teams", equipe);
                 context.startActivity(i);
             }
         });
@@ -62,7 +61,17 @@ public class EquipesAdapter extends RecyclerView.Adapter<EquipesAdapter.EquipesV
 
     @Override
     public int getItemCount() {
+
+        if (equipeList == null) {
+            return 0;
+        }
+
         return equipeList.size();
+    }
+
+    public void atualiza(List<Equipe> equipes) {
+        this.equipeList = equipes;
+        notifyDataSetChanged();
     }
 
     class EquipesViewHolder extends RecyclerView.ViewHolder {
@@ -72,6 +81,10 @@ public class EquipesAdapter extends RecyclerView.Adapter<EquipesAdapter.EquipesV
             equipeDescription = itemView.findViewById(R.id.textViewEquipeDescription);
             equipeLogo = itemView.findViewById(R.id.imageViewLogoEquipe);
             equipeName = itemView.findViewById(R.id.textViewEquipeName);
+
+
+
+
 
         }
     }

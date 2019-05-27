@@ -11,6 +11,8 @@ import android.widget.TextView;
 import com.redentor.redgames.fragment.EquipesFragment;
 import com.redentor.redgames.fragment.GamesFragment;
 import com.redentor.redgames.fragment.PhotoFragment;
+import com.redentor.redgames.fragment.RankFragment;
+import com.redentor.redgames.fragment.VoteFragment;
 
 public class HomeActivity extends AppCompatActivity {
     private TextView mTextMessage;
@@ -43,6 +45,14 @@ public class HomeActivity extends AppCompatActivity {
                 case R.id.navigation_notifications:
                     getSupportFragmentManager().beginTransaction().replace(R.id.frame, new EquipesFragment()).commit();
                     txtToolbar.setText("Equipes");
+                    break;
+                case R.id.navigation_ranking:
+                    getSupportFragmentManager().beginTransaction().replace(R.id.frame,new RankFragment()).commit();
+                    txtToolbar.setText("Ranking");
+                    break;
+                case R.id.navigation_vote:
+                    getSupportFragmentManager().beginTransaction().replace(R.id.frame,new VoteFragment()).commit();
+                    txtToolbar.setText("Vote");
                     break;
 
             }

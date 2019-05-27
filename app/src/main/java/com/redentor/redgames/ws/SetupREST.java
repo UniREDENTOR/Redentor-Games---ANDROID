@@ -22,18 +22,8 @@ public class SetupREST {
         OkHttpClient client = new OkHttpClient.Builder()
                 .addInterceptor(interceptor).build();
 
-
-
-
-
-
-
-
-
-
-
         Retrofit retrofit = new Retrofit.Builder()
-            .baseUrl("http://henriquetatagiba.localhost.run/api/")
+            .baseUrl("https://red-games-api.herokuapp.com/api/")
             .addConverterFactory(GsonConverterFactory.create())
                 .client(client)
                 .build();
