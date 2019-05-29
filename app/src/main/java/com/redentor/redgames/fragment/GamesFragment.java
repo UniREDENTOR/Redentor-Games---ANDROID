@@ -54,9 +54,13 @@ public class GamesFragment extends Fragment {
         listViewDias.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
                 Intent intent = new Intent(getContext(), DescriptionGamesActivity.class);
-                intent.putExtra("idgame", position);
-                startActivity(intent);
+
+                Toast.makeText(getContext(), "clicou na posição" + position , Toast.LENGTH_SHORT).show();
+
+                intent.putExtra("idgames", position);
+               startActivity(intent);
 
             }
         });

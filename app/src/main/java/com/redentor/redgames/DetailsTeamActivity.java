@@ -28,11 +28,12 @@ public class DetailsTeamActivity extends AppCompatActivity {
         txtTeamName.setText(equipe.getName());
         txtNameLeaderTeam.setText(equipe.getLeader());
         txtDescription.setText(equipe.getDescription());
+        txtMembers.setText(equipe.getMemberNames());
 
         String participations = String.valueOf(equipe.getParticipations());
 
 
-        txtParticipations.setText(participations    );
+        txtParticipations.setText(participations);
 
 
         photoUrl(equipe.getLogo(),imgLogoTeam);

@@ -11,7 +11,7 @@ public class Equipe implements Serializable {
     private String leader;
     private String memberNames;
     private int participations = 0;
-    private String  placing;
+    private String placing;
 
     public Equipe() {}
 

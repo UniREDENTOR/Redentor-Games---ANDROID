@@ -3,6 +3,7 @@ package com.redentor.redgames.ws;
 import com.redentor.redgames.model.Equipe;
 import com.redentor.redgames.model.GameDescription;
 import com.redentor.redgames.model.Photo;
+import com.redentor.redgames.model.Rank;
 
 import java.util.List;
 
@@ -34,6 +35,17 @@ public interface ApiREST {
     })
     @GET("teams")
     Call<List<Equipe>> listEquipe();
+
+
+
+
+    @Headers({
+            "Content-Type: application/json",
+            "Accept: application/json"
+    })
+    @GET("ranking")
+    Call<List<Rank>> listRank();
+
 
 
 

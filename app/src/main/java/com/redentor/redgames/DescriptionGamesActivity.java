@@ -24,7 +24,8 @@ import retrofit2.Response;
 
 public class DescriptionGamesActivity extends AppCompatActivity {
 
-    int position = 0;
+
+
     private RecyclerView recyclerViewDescriptionGames;
     private TextView txtTool;
     private Toolbar toolbar;
@@ -44,7 +45,10 @@ public class DescriptionGamesActivity extends AppCompatActivity {
 
 
         Intent i = getIntent();
-        position = i.getExtras().getInt("idgames") + 4;
+       int position = i.getExtras().getInt("idgames") + 4;
+
+
+
 
 
        recyclerViewDescriptionGames.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
