@@ -22,9 +22,13 @@
             android:id="@+id/textViewGameDescription"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:fontFamily="@font/acme"
             android:gravity="center"
             android:text="GameDescrição"
-            android:textSize="16sp" />
+            android:textColor="@color/textoes"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/textView2"
@@ -33,15 +37,18 @@
             android:layout_weight="1"
             android:fontFamily="@font/carter_one"
             android:gravity="center"
-            android:text="Dia"
-            android:textSize="20sp" />
+            android:text="Data"
+            android:textColor="@color/textos"
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/textViewGameData"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/acme"
             android:gravity="center"
             android:text="GameData"
+            android:textColor="@color/textoes"
             android:textSize="16sp" />
 
         <TextView
@@ -52,14 +59,17 @@
             android:fontFamily="@font/carter_one"
             android:gravity="center"
             android:text="Horário"
-            android:textSize="20sp" />
+            android:textColor="@color/textos"
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/textViewGameHorario"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/acme"
             android:gravity="center"
             android:text="GameHorario"
+            android:textColor="@color/textoes"
             android:textSize="16sp" />
 
         <TextView
@@ -70,23 +80,30 @@
             android:fontFamily="@font/carter_one"
             android:gravity="center"
             android:text="Local"
-            android:textSize="20sp" />
+            android:textColor="@color/textos"
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/textViewGameLocal"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/acme"
             android:gravity="center"
             android:text="GameLocal"
+            android:textColor="@color/textoes"
             android:textSize="16sp" />
     </LinearLayout>
 
 
     <Button
         android:id="@+id/buttonEdital"
-        android:layout_gravity="center_horizontal"
-        android:text="Edital"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:textColor="#FFFFFF"
+        android:fontFamily="@font/carter_one"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button_shape"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Consultar o Edital" />
 
 </LinearLayout>

@@ -88,11 +88,10 @@
         android:text="Integrantes"
         android:textSize="16sp" />
 
-    <TextView
-        android:id="@+id/txtMembers"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/lvMembers"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Participantes" />
+        android:layout_height="match_parent" />
 
 
 </LinearLayout>

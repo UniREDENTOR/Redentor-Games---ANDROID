@@ -76,8 +76,8 @@ public class DescriptionAdapter extends RecyclerView.Adapter<DescriptionAdapter.
         public GameViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            txtNome = itemView.findViewById(R.id.txtNome);
-            txtDescricao = itemView.findViewById(R.id.txtDescricao);
+            txtNome = itemView.findViewById(R.id.txtNomeEvent);
+            txtDescricao = itemView.findViewById(R.id.txtId);
 
 
         }

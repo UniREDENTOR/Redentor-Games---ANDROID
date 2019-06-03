@@ -11,26 +11,30 @@
         android:roundIcon="@drawable/redentor"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DetailsTeamActivity"
-            android:screenOrientation="portrait">
-
-        </activity>
-        <activity android:name=".FullDescriptionGameActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".DescriptionGamesActivity"
-            android:screenOrientation="portrait"/>
-            <activity
-            android:screenOrientation="portrait"
+        <activity android:name=".RatingActivity"></activity>
+        <activity android:name=".ChooseTeamVotationActivity" />
+        <activity
+            android:name=".DetailsTeamActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".FullDescriptionGameActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".DescriptionGamesActivity"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".HomeActivity"
-            android:label="@string/app_name">
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"
-            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait" />
 
         <meta-data
             android:name="preloaded_fonts"

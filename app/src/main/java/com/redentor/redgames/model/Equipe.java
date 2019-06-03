@@ -5,11 +5,11 @@ import java.io.Serializable;
 public class Equipe implements Serializable {
 
     private String logo;
-    private int id = 0;
+   // private int id = 0;
     private String name;
     private String description;
     private String leader;
-    private String memberNames;
+    private String[] members;
     private int participations = 0;
     private String placing;
 
@@ -43,9 +43,9 @@ public class Equipe implements Serializable {
 
     public void setLeader(String leader) { this.leader = leader; }
 
-    public String getMemberNames() { return memberNames; }
+    public String[] getMembers() { return members; }
 
-    public void setMemberNames(String memberNames) { this.memberNames = memberNames; }
+    public void setMembers(String[] members) { this.members = members; }
 
     public int getParticipations() { return participations; }
 
