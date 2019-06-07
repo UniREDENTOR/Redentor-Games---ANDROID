@@ -10,7 +10,7 @@
     android:orientation="horizontal">
 
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imageViewLogoEquipe"
         android:layout_width="50dp"
         android:layout_height="50dp"
@@ -29,12 +29,14 @@
             android:fontFamily="@font/carter_one"
             android:gravity="center"
             android:text="teste"
-            android:textColor="@color/textos" />
+            android:textColor="@color/textos"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/textViewEquipeDescription"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/baloo"
             android:gravity="center"
             android:text="teste"
             android:textColor="@color/textoes" />

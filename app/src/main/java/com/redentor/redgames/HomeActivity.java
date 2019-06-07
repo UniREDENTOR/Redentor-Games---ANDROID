@@ -1,24 +1,34 @@
 package com.redentor.redgames;
 
+import android.Manifest;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.redentor.redgames.fragment.EquipesFragment;
 import com.redentor.redgames.fragment.GamesFragment;
 import com.redentor.redgames.fragment.PhotoFragment;
 import com.redentor.redgames.fragment.RankFragment;
 import com.redentor.redgames.fragment.VoteFragment;
+import com.redentor.redgames.helper.Permissao;
 
 public class HomeActivity extends AppCompatActivity {
-    private TextView mTextMessage;
-    private Toolbar toolbar;
     private TextView txtToolbar;
+    private String[] permissoesNecessarias = new String[]{
+            Manifest.permission.INTERNET
 
+    };
 
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -67,19 +77,23 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         BottomNavigationView navView = findViewById(R.id.nav_view);
-        mTextMessage = findViewById(R.id.message);
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         getSupportFragmentManager().beginTransaction().replace(R.id.frame,new PhotoFragment()).commit();
         txtToolbar = findViewById(R.id.txtToolbar);
 
         txtToolbar.setText("Redentor Games 2018");
 
-        toolbar = findViewById(R.id.toolbar);
+        Permissao.validarPermissoes(permissoesNecessarias,this,1);
+
+
 
 
 
 
     }
+
+
+
 
 
 }

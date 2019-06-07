@@ -7,7 +7,11 @@
 
     <TextView
         android:id="@+id/txtMembersName"
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:fontFamily="@font/baloo"
+        android:gravity="center"
+        android:text="TextView"
+        android:textColor="@color/textoes"
+        android:textSize="16sp" />
 </LinearLayout>

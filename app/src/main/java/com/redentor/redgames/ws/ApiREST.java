@@ -77,7 +77,7 @@ public interface ApiREST {
 
 
     @POST("events/{id}/{team_id}")
-            Call<Note> note(@Path("id") int idevent, @Path("team_id") int idteam, @Body DDN jsonObject);
+            Call<Note> note(@Path("id") int idevent, @Path("team_id") int idteam, @Body Note note);
 
 
 

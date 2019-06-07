@@ -26,10 +26,12 @@ public class VotationTeamsAdapter extends RecyclerView.Adapter<VotationTeamsAdap
     private List<TeamsVotations> teamsVotationslist;
     private TextView textVotationNome, textVotationScore, idTeam;
     private ImageView imageViewLogo;
+    private int idEvento;
 
-    public VotationTeamsAdapter(Context context) {
+    public VotationTeamsAdapter(Context context, int idEvento) {
         this.context = context;
         this.teamsVotationslist = new ArrayList<>();
+        this.idEvento = idEvento;
     }
 
     @NonNull
@@ -45,20 +47,19 @@ public class VotationTeamsAdapter extends RecyclerView.Adapter<VotationTeamsAdap
         TeamsVotations teamsVotations = teamsVotationslist.get(i);
         textVotationNome.setText(teamsVotations.getName());
         textVotationScore.setText(teamsVotations.getAvg());
-        String quantidade = String.valueOf(teamsVotations.getId());
-        idTeam.setText(quantidade);
 
 
 
 
-        Picasso.get().load(teamsVotations.getLogo()).into(imageViewLogo);
+
+        Picasso.get().load(teamsVotations.getLogo()).noFade().into(imageViewLogo);
 
         votationViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, RatingActivity.class);
-                intent.putExtra("idteam", teamsVotations.getId());
                 intent.putExtra("timeescolhido", teamsVotations);
+                intent.putExtra("ideventovotacao", idEvento);
                 context.startActivity(intent);
                 Toast.makeText(context, "position" + i, Toast.LENGTH_SHORT).show();
             }
@@ -89,7 +90,7 @@ public class VotationTeamsAdapter extends RecyclerView.Adapter<VotationTeamsAdap
             textVotationNome = itemView.findViewById(R.id.txtVotationNameTeam);
             textVotationScore = itemView.findViewById(R.id.txtTeamScore);
             imageViewLogo = itemView.findViewById(R.id.imgTeamVotation);
-            idTeam = itemView.findViewById(R.id.teamId);
+
         }
     }
 }

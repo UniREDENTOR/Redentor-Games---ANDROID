@@ -43,13 +43,13 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHol
 
         txtNameEvent.setText(event.getName());
         txtDescriptionEvent.setText(event.getDescription());
-        txtId.setText(String.valueOf(event.getId()));
+//        txtId.setText(String.valueOf(event.getId()));
 
         eventViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, ChooseTeamVotationActivity.class);
-                intent.putExtra("idevento", event.getId());
+                intent.putExtra("idevento",event);
                 Toast.makeText(context, "id" + event.getId(), Toast.LENGTH_LONG).show();
                 context.startActivity(intent);
 
@@ -84,7 +84,7 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHol
 
             txtNameEvent = itemView.findViewById(R.id.txtNomeEvent);
             txtDescriptionEvent = itemView.findViewById(R.id.txtEventDescription);
-            txtId = itemView.findViewById(R.id.txtId);
+            //txtId = itemView.findViewById(R.id.txtId);
         }
     }
 }

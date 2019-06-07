@@ -1,6 +1,8 @@
 package com.redentor.redgames.model;
 
-public class Event {
+import java.io.Serializable;
+
+public class Event implements Serializable {
 
     private String name;
     private Boolean active = false;

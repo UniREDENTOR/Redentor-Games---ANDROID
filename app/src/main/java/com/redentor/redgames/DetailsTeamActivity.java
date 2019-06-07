@@ -19,7 +19,7 @@ import com.squareup.picasso.Picasso;
 
 public class DetailsTeamActivity extends AppCompatActivity {
 
-    private TextView txtNameLeaderTeam, txtParticipations, txtPositionRanking, txtDescription, txtMembers, txtTeamName;
+    private TextView txtNameLeaderTeam, txtParticipations, txtDescription,txtTeamName, txtToolbar;
     private ImageView imgLogoTeam;
     private RecyclerView lvMembers;
 
@@ -32,6 +32,8 @@ public class DetailsTeamActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         Equipe equipe = (Equipe) intent.getExtras().getSerializable("teams");
+
+        txtToolbar.setText(equipe.getName());
 
 
         txtTeamName.setText(equipe.getName());
@@ -61,16 +63,16 @@ public class DetailsTeamActivity extends AppCompatActivity {
         txtTeamName = findViewById(R.id.txtTeamName);
         txtNameLeaderTeam = findViewById(R.id.txtNameLeaderTeam);
         txtDescription = findViewById(R.id.txtDescription);
-        txtPositionRanking = findViewById(R.id.txtPositionRanking);
         txtParticipations = findViewById(R.id.txtParticipations);
         lvMembers = findViewById(R.id.lvMembers);
         imgLogoTeam = findViewById(R.id.imgLogoTeam);
+        txtToolbar = findViewById(R.id.txtToolbar);
     }
 
 
     private void photoUrl(String url, ImageView imageView) {
 
-        Picasso.get().load(url).into(imageView);
+        Picasso.get().load(url).noFade().into(imageView);
     }
 
 

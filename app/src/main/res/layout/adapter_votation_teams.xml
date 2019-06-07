@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="horizontal">
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imgTeamVotation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="5dp"
         app:srcCompat="@mipmap/ic_launcher" />
 
     <LinearLayout
@@ -23,20 +24,34 @@
             android:id="@+id/txtVotationNameTeam"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="teste" />
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/carter_one"
+            android:gravity="center"
+            android:text="teste"
+            android:textColor="@color/textos"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/txtScor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/baloo"
+            android:gravity="center"
+            android:text="Média:"
+            android:textColor="@color/textos"
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/txtTeamScore"
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="TextView" />
-
-        <TextView
-            android:id="@+id/teamId"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:fontFamily="@font/baloo"
+            android:gravity="center"
+            android:text="TextView"
+            android:textColor="@color/textoes"
+            android:textSize="16sp" />
 
     </LinearLayout>
 

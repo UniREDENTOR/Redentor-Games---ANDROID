@@ -43,8 +43,10 @@ public class RankAdapter extends RecyclerView.Adapter<RankAdapter.RankViewHolder
 
         Rank rank = listRank.get(i);
         nameRank.setText(rank.getName());
-        //positionRank.setText(rank.getPosition());
-        scoreRank.setText(rank.getScore());
+        String position = String.valueOf(rank.getPosition());
+        String score = String.valueOf(rank.getScore());
+        positionRank.setText(position + "º");
+       scoreRank.setText(score);
         Picasso.get().load(rank.getLogo()).noFade().into(logoRank);
 
 
@@ -67,7 +69,7 @@ public class RankAdapter extends RecyclerView.Adapter<RankAdapter.RankViewHolder
         public RankViewHolder(@NonNull View itemView) {
             super(itemView);
             nameRank = itemView.findViewById(R.id.txtNameRank);
-            positionRank = itemView.findViewById(R.id.txtPositionRanking);
+            positionRank = itemView.findViewById(R.id.txtRankingPosition);
             scoreRank = itemView.findViewById(R.id.txtScoreRank);
             logoRank = itemView.findViewById(R.id.imgLogoRank);
 

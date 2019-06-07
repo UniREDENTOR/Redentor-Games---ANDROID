@@ -5,19 +5,36 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="10dp"
+    android:gravity="center"
     android:orientation="horizontal">
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imgLogoRank"
-        android:layout_width="70dp"
-        android:layout_height="60dp"
-        android:layout_marginLeft="2dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="5dp"
+        android:foregroundGravity="center"
         app:srcCompat="@mipmap/ic_launcher" />
 
+
+    <TextView
+        android:id="@+id/txtRankingPosition"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_gravity="center"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/baloo"
+        android:gravity="center"
+        android:text="TextView"
+        android:textColor="@color/textos"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="285dp"
+        tools:layout_editor_absoluteY="82dp" />
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
         android:orientation="vertical">
 
 
@@ -28,28 +45,33 @@
             android:fontFamily="@font/carter_one"
             android:gravity="center"
             android:text="TextView"
-            android:textSize="18sp"
+            android:textColor="@color/textos"
+            android:textSize="20sp"
             tools:layout_editor_absoluteX="285dp"
             tools:layout_editor_absoluteY="46dp" />
 
         <TextView
-            android:id="@+id/txtPositionRank"
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/baloo"
             android:gravity="center"
-            android:text="TextView"
-            android:textSize="10sp"
+            android:text="Pontuação:"
+            android:textAppearance="@style/Widget.Design.CollapsingToolbar"
+            android:textColor="@color/textoes"
+            android:textSize="15sp"
             tools:layout_editor_absoluteX="285dp"
-            tools:layout_editor_absoluteY="82dp" />
+            tools:layout_editor_absoluteY="122dp" />
 
         <TextView
             android:id="@+id/txtScoreRank"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/baloo"
             android:gravity="center"
             android:text="TextView"
             android:textAppearance="@style/Widget.Design.CollapsingToolbar"
-            android:textSize="10sp"
+            android:textColor="@color/textoes"
+            android:textSize="13sp"
             tools:layout_editor_absoluteX="285dp"
             tools:layout_editor_absoluteY="122dp" />
 
