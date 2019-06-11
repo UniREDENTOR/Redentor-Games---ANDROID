@@ -57,8 +57,6 @@ public class GamesFragment extends Fragment {
 
                 Intent intent = new Intent(getContext(), DescriptionGamesActivity.class);
 
-                Toast.makeText(getContext(), "clicou na posição" + position , Toast.LENGTH_SHORT).show();
-
                 intent.putExtra("idgames", position);
                startActivity(intent);
 
@@ -70,11 +68,7 @@ public class GamesFragment extends Fragment {
     }
 
 
-    public View inicializarComponentes(View view) {
-       listViewDias = view.findViewById(R.id.lvDias);
 
-        return view;
-    }
 
 
 

@@ -48,17 +48,26 @@ public class VoteFragment extends Fragment {
 
         recyclerViewEvent.setAdapter(eventAdapter);
 
-        SetupREST.apiREST.listEvent().enqueue(new Callback<List<Event>>() {
-            @Override
-            public void onResponse(Call<List<Event>> call, Response<List<Event>> response) {
-                eventAdapter.atualiza(response.body());
-            }
 
-            @Override
-            public void onFailure(Call<List<Event>> call, Throwable t) {
+        try {
 
-            }
-        });
+            SetupREST.apiREST.listEvent().enqueue(new Callback<List<Event>>() {
+                @Override
+                public void onResponse(Call<List<Event>> call, Response<List<Event>> response) {
+                    eventAdapter.atualiza(response.body());
+                }
+
+                @Override
+                public void onFailure(Call<List<Event>> call, Throwable t) {
+
+                }
+            });
+
+        }catch (Exception e) {
+
+        }
+
+
 
         return view;
 

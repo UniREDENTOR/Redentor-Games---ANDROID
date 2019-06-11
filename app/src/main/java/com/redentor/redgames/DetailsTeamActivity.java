@@ -56,7 +56,7 @@ public class DetailsTeamActivity extends AppCompatActivity {
 
         photoUrl(equipe.getLogo(),imgLogoTeam);
 
-       // txtMembers.setText("Joao " + "Pedro " + "Aline");
+
     }
 
     private void inicializaComponentes(){

@@ -47,18 +47,25 @@ public class RankFragment extends Fragment {
 
         recyclerViewRank.setAdapter(rankAdapter);
 
-        SetupREST.apiREST.listRank().enqueue(new Callback<List<Rank>>() {
-            @Override
-            public void onResponse(Call<List<Rank>> call, Response<List<Rank>> response) {
+        try {
+            SetupREST.apiREST.listRank().enqueue(new Callback<List<Rank>>() {
+                @Override
+                public void onResponse(Call<List<Rank>> call, Response<List<Rank>> response) {
 
-                rankAdapter.atualiza(response.body());
-            }
+                    rankAdapter.atualiza(response.body());
+                }
 
-            @Override
-            public void onFailure(Call<List<Rank>> call, Throwable t) {
+                @Override
+                public void onFailure(Call<List<Rank>> call, Throwable t) {
 
-            }
-        });
+                }
+            });
+
+        }catch (Exception e) {
+
+        }
+
+
 
         return view;
 

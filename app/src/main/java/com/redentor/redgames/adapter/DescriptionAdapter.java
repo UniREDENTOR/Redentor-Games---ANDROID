@@ -62,6 +62,11 @@ public class DescriptionAdapter extends RecyclerView.Adapter<DescriptionAdapter.
 
     @Override
     public int getItemCount() {
+
+        if(listDescriptionAdapter == null) {
+            return 0;
+        }
+
         return listDescriptionAdapter.size();
     }
 

@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.redentor.redgames.ChooseTeamVotationActivity;
 import com.redentor.redgames.R;
 import com.redentor.redgames.RatingActivity;
+import com.redentor.redgames.model.Event;
 import com.redentor.redgames.model.TeamsVotations;
 import com.squareup.picasso.Picasso;
 
@@ -24,14 +25,14 @@ public class VotationTeamsAdapter extends RecyclerView.Adapter<VotationTeamsAdap
 
     private Context context;
     private List<TeamsVotations> teamsVotationslist;
-    private TextView textVotationNome, textVotationScore, idTeam;
+    private TextView textVotationNome, textVotationScore;
     private ImageView imageViewLogo;
-    private int idEvento;
+    private Event evento;
 
-    public VotationTeamsAdapter(Context context, int idEvento) {
+    public VotationTeamsAdapter(Context context, Event evento) {
         this.context = context;
         this.teamsVotationslist = new ArrayList<>();
-        this.idEvento = idEvento;
+        this.evento = evento;
     }
 
     @NonNull
@@ -59,9 +60,9 @@ public class VotationTeamsAdapter extends RecyclerView.Adapter<VotationTeamsAdap
             public void onClick(View v) {
                 Intent intent = new Intent(context, RatingActivity.class);
                 intent.putExtra("timeescolhido", teamsVotations);
-                intent.putExtra("ideventovotacao", idEvento);
+                intent.putExtra("ideventovotacao", evento);
                 context.startActivity(intent);
-                Toast.makeText(context, "position" + i, Toast.LENGTH_SHORT).show();
+
             }
         });
 
@@ -74,6 +75,10 @@ public class VotationTeamsAdapter extends RecyclerView.Adapter<VotationTeamsAdap
 
     @Override
     public int getItemCount() {
+
+        if (teamsVotationslist == null) {
+            return 0;
+        }
 
         return teamsVotationslist.size();
     }

@@ -51,7 +51,6 @@ public class EquipesAdapter extends RecyclerView.Adapter<EquipesAdapter.EquipesV
         equipesViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, "Trocar para tela da equipe", Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(context, DetailsTeamActivity.class);
                 i.putExtra("teams", equipe);
                 context.startActivity(i);

@@ -43,7 +43,7 @@ public class ChooseTeamVotationActivity extends AppCompatActivity {
 
 
 
-        final VotationTeamsAdapter votationTeamsAdapter = new VotationTeamsAdapter(this, idEvento);
+        final VotationTeamsAdapter votationTeamsAdapter = new VotationTeamsAdapter(this, event);
         RecyclerView recyclerView = findViewById(R.id.lvChooseTeam);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
@@ -51,17 +51,25 @@ public class ChooseTeamVotationActivity extends AppCompatActivity {
         recyclerView.setAdapter(votationTeamsAdapter);
 
 
-        SetupREST.apiREST.listTeamVotations(idEvento).enqueue(new Callback<List<TeamsVotations>>() {
-            @Override
-            public void onResponse(Call<List<TeamsVotations>> call, Response<List<TeamsVotations>> response) {
-                votationTeamsAdapter.atualiza(response.body());
+        try {
+            SetupREST.apiREST.listTeamVotations(idEvento).enqueue(new Callback<List<TeamsVotations>>() {
+                @Override
+                public void onResponse(Call<List<TeamsVotations>> call, Response<List<TeamsVotations>> response) {
+                    votationTeamsAdapter.atualiza(response.body());
 
-            }
+                }
 
-            @Override
-            public void onFailure(Call<List<TeamsVotations>> call, Throwable t) {
+                @Override
+                public void onFailure(Call<List<TeamsVotations>> call, Throwable t) {
 
-            }
-        });
+                }
+            });
+
+        }catch (Exception e) {
+
+        }
+
+
+
     }
 }

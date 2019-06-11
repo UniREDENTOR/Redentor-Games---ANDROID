@@ -50,30 +50,38 @@
             tools:layout_editor_absoluteX="285dp"
             tools:layout_editor_absoluteY="46dp" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/baloo"
-            android:gravity="center"
-            android:text="Pontuação:"
-            android:textAppearance="@style/Widget.Design.CollapsingToolbar"
-            android:textColor="@color/textoes"
-            android:textSize="15sp"
-            tools:layout_editor_absoluteX="285dp"
-            tools:layout_editor_absoluteY="122dp" />
-
-        <TextView
-            android:id="@+id/txtScoreRank"
+        <LinearLayout
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/baloo"
+            android:layout_height="match_parent"
             android:gravity="center"
-            android:text="TextView"
-            android:textAppearance="@style/Widget.Design.CollapsingToolbar"
-            android:textColor="@color/textoes"
-            android:textSize="13sp"
-            tools:layout_editor_absoluteX="285dp"
-            tools:layout_editor_absoluteY="122dp" />
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txtScoreRank"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/baloo"
+                android:gravity="center"
+                android:text="TextView"
+                android:textAppearance="@style/Widget.Design.CollapsingToolbar"
+                android:textColor="@color/textoes"
+                android:textSize="15sp"
+                tools:layout_editor_absoluteX="285dp"
+                tools:layout_editor_absoluteY="122dp" />
+
+            <TextView
+                android:id="@+id/textViewpts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:fontFamily="@font/baloo"
+                android:gravity="center"
+                android:text="pts"
+                android:textColor="@color/textos" />
+
+
+        </LinearLayout>
+
 
 
     </LinearLayout>

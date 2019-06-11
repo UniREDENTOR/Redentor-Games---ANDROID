@@ -50,19 +50,27 @@ public class EquipesFragment extends Fragment {
         recyclerView.addItemDecoration(new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL));
         recyclerView.setAdapter(adapter);
 
+        try {
 
-        SetupREST.apiREST.listEquipe().enqueue(new Callback<List<Equipe>>() {
-            @Override
-            public void onResponse(Call<List<Equipe>> call, Response<List<Equipe>> response) {
+            SetupREST.apiREST.listEquipe().enqueue(new Callback<List<Equipe>>() {
+                @Override
+                public void onResponse(Call<List<Equipe>> call, Response<List<Equipe>> response) {
 
-                adapter.atualiza(response.body());
-            }
+                    adapter.atualiza(response.body());
+                }
 
-            @Override
-            public void onFailure(Call<List<Equipe>> call, Throwable t) {
+                @Override
+                public void onFailure(Call<List<Equipe>> call, Throwable t) {
 
-            }
-        });
+                }
+            });
+
+        } catch (Exception e) {
+
+        }
+
+
+
 
         return view;
     }

@@ -45,7 +45,7 @@ public class DescriptionGamesActivity extends AppCompatActivity {
 
 
         Intent i = getIntent();
-       int position = i.getExtras().getInt("idgames") + 4;
+       int position = i.getExtras().getInt("idgames") + 1;
 
 
 
@@ -55,10 +55,6 @@ public class DescriptionGamesActivity extends AppCompatActivity {
        recyclerViewDescriptionGames.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
 
 
-        //GameDescription gameDescription = new GameDescription();
-        //gameDescription.setName("FUTEBOL");
-        //gameDescription.setDescription("FUTEBOL");
-
 
 
 
@@ -66,23 +62,31 @@ public class DescriptionGamesActivity extends AppCompatActivity {
 
         recyclerViewDescriptionGames.setAdapter(descriptionAdapter);
 
-        SetupREST.apiREST.listGameDescription(position).enqueue(new Callback<List<GameDescription>>() {
-            @Override
-            public void onResponse(Call<List<GameDescription>> call, Response<List<GameDescription>> response) {
+        try {
+
+            SetupREST.apiREST.listGameDescription(position).enqueue(new Callback<List<GameDescription>>() {
+                @Override
+                public void onResponse(Call<List<GameDescription>> call, Response<List<GameDescription>> response) {
 
 
-               descriptionAdapter.update(response.body());
-                Log.e("certo", call.toString());
-            }
+                    descriptionAdapter.update(response.body());
+                    Log.e("certo", call.toString());
+                }
 
-            @Override
-            public void onFailure(Call<List<GameDescription>> call, Throwable t) {
+                @Override
+                public void onFailure(Call<List<GameDescription>> call, Throwable t) {
 
-                Log.e("erro", call.toString());
-                t.printStackTrace();
+                    Log.e("erro", call.toString());
+                    t.printStackTrace();
 
-            }
-        });
+                }
+            });
+
+        } catch (Exception e) {
+
+        }
+
+
 
 
     }

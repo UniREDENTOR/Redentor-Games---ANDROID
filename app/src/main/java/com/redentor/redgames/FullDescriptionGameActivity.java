@@ -13,7 +13,7 @@ import com.redentor.redgames.model.GameDescription;
 
 public class FullDescriptionGameActivity extends AppCompatActivity {
 
-    private TextView textViewGameNome;
+
     private TextView textViewGameData;
     private TextView textViewGameHorario;
     private TextView textViewGameLocal;
@@ -27,7 +27,7 @@ public class FullDescriptionGameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_full_description_game);
 
-        //textViewGameNome = findViewById(R.id.textViewGameNome);
+
         textViewGameData = findViewById(R.id.textViewGameData);
         textViewGameHorario = findViewById(R.id.textViewGameHorario);
         textViewGameLocal = findViewById(R.id.textViewGameLocal);
@@ -41,7 +41,7 @@ public class FullDescriptionGameActivity extends AppCompatActivity {
 
         txtTool.setText(game.getName());
 
-       // textViewGameNome.setText(game.getName());
+
         textViewGameData.setText(game.getDate());
         textViewGameHorario.setText(game.getTime());
         textViewGameLocal.setText(game.getLocale());

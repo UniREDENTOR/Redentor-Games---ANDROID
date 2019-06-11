@@ -19,7 +19,6 @@ import java.util.List;
 public class PhotoAdapter extends RecyclerView.Adapter<PhotoAdapter.photoViewHolder> {
     private List<Photo> arrayListPhoto;
     private Context context;
-    private int layoutId;
     private ImageView imageView;
 
     public PhotoAdapter( Context context) {

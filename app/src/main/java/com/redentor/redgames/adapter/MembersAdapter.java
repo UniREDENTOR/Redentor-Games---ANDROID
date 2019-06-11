@@ -43,6 +43,10 @@ public class MembersAdapter extends RecyclerView.Adapter<MembersAdapter.MembersV
 
     @Override
     public int getItemCount() {
+
+        if(membersList == null) {
+            return 0;
+        }
         return membersList.length;
     }
 

@@ -18,15 +18,30 @@
         android:gravity="center"
         android:orientation="vertical">
 
-        <com.hsalf.smilerating.SmileRating
-            android:id="@+id/smile_rating"
+        <TextView
+            android:id="@+id/textVieww"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp" />
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:fontFamily="@font/baloo"
+            android:gravity="center"
+            android:text="Atribua uma nota de 1 a 5 arrastando as estrelas e clique no botão Votar para validar seu voto! Só é possivel votar uma vez, então pense bem :)"
+            android:textColor="@color/textos" />
+
+        <RatingBar
+            android:id="@+id/smile_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:numStars="5"
+            android:padding="0dp"
+            android:rating="5"
+            android:stepSize="1" />
 
         <Button
             android:id="@+id/btnVotar"
-            android:layout_width="match_parent"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:background="@drawable/button_shape"
@@ -34,6 +49,7 @@
             android:text="Votar"
             android:textColor="#FFFFFF"
             android:textSize="15sp" />
+
     </LinearLayout>
 
 

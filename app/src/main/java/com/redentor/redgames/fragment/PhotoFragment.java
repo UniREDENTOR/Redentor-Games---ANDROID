@@ -59,24 +59,32 @@ public class PhotoFragment extends Fragment {
 
        photosview.setAdapter(photoAdapter);
 
-        SetupREST.apiREST.listPhotos().enqueue(new Callback<List<Photo>>() {
-            @Override
-            public void onResponse(Call<List<Photo>> call, Response<List<Photo>> response) {
+       try {
+
+           SetupREST.apiREST.listPhotos().enqueue(new Callback<List<Photo>>() {
+               @Override
+               public void onResponse(Call<List<Photo>> call, Response<List<Photo>> response) {
 
 
-                photoAdapter.atualiza(response.body());
+                   photoAdapter.atualiza(response.body());
 
-                Log.e("certo", call.toString());
-            }
+                   Log.e("certo", call.toString());
+               }
 
-            @Override
-            public void onFailure(Call<List<Photo>> call, Throwable t) {
+               @Override
+               public void onFailure(Call<List<Photo>> call, Throwable t) {
 
-                Log.e("erro", call.toString());
-                t.printStackTrace();
+                   Log.e("erro", call.toString());
+                   t.printStackTrace();
 
-            }
-        });
+               }
+           });
+
+       } catch (Exception e) {
+
+       }
+
+
 
         return view;
     }

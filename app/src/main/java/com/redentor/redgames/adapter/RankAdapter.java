@@ -54,6 +54,10 @@ public class RankAdapter extends RecyclerView.Adapter<RankAdapter.RankViewHolder
 
     @Override
     public int getItemCount() {
+
+        if (listRank == null) {
+            return 0;
+        }
         return listRank.size();
     }
 

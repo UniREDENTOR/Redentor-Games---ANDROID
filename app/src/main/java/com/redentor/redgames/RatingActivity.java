@@ -11,12 +11,14 @@ import android.telephony.TelephonyManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.hsalf.smilerating.BaseRating;
 import com.hsalf.smilerating.SmileRating;
 import com.redentor.redgames.helper.Permissao;
+import com.redentor.redgames.model.Event;
 import com.redentor.redgames.model.Note;
 import com.redentor.redgames.model.TeamsVotations;
 import com.redentor.redgames.ws.SetupREST;
@@ -29,15 +31,21 @@ import retrofit2.Response;
 
 public class RatingActivity extends AppCompatActivity {
 
-    private ImageView logoTimeEscolhido;
-    private TextView txtTimeEscolhido, txtScoreTime;
+
     private Button btnVotar;
-    private TelephonyManager telephonyManager;
     private String imei;
+    private RatingBar ratingBar;
     private String[] permissoesNecessarias = new String[]{
             Manifest.permission.READ_PHONE_STATE
 
     };
+
+    private int idEvent;
+    private Boolean Active;
+
+
+
+
 
     private TextView txtToolbar2, txtnomeTimeToolbar;
 
@@ -48,73 +56,73 @@ public class RatingActivity extends AppCompatActivity {
 
         txtToolbar2 = findViewById(R.id.txtToolbar2);
         txtnomeTimeToolbar = findViewById(R.id.txtToolbarEvent);
+        ratingBar = findViewById(R.id.smile_rating);
+        btnVotar = findViewById(R.id.btnVotar);
 
-        Permissao.validarPermissoes(permissoesNecessarias, this,1);
 
         Intent intent = getIntent();
         TeamsVotations teamsVotations = (TeamsVotations) intent.getExtras().getSerializable("timeescolhido");
-        int idEvento = intent.getExtras().getInt("ideventovotacao");
+        Event event = (Event) intent.getExtras().getSerializable("ideventovotacao");
+
+        idEvent = event.getId();
+        Active = event.getActive();
+
+        Permissao.validarPermissoes(permissoesNecessarias, this,1);
+
+
 
 
         txtToolbar2.setText("Escolha uma nota para:");
         txtnomeTimeToolbar.setText(teamsVotations.getName());
+        ratingBar.setMax(5);
+
 
 
         imei = getIMEINumber();
 
 
-
-
-
-        SmileRating smileRating = (SmileRating) findViewById(R.id.smile_rating);
-        btnVotar = findViewById(R.id.btnVotar);
-
-
-
-
-
-
-
-
-
-
-        smileRating.setNameForSmile(BaseRating.TERRIBLE, "Péssimo - 1");
-        smileRating.setNameForSmile(BaseRating.BAD, "Ruim - 2");
-        smileRating.setNameForSmile(BaseRating.OKAY, "Aceitável - 3");
-        smileRating.setNameForSmile(BaseRating.GOOD, "Bom - 4");
-        smileRating.setNameForSmile(BaseRating.GREAT, "Ótimo - 5");
-
-
-
-
         btnVotar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int level = smileRating.getRating();
+                int level = (int) ratingBar.getRating();
 
-                if (level == 0)  {
-                    Toast.makeText(RatingActivity.this, "Por favor escolha uma nota", Toast.LENGTH_SHORT).show();
-                } else {
+
+
+                if (level > 0 && Active)  {
 
                     Note note = new Note();
                     note.setUuid(imei);
                     note.setAmount(level);
 
-                    SetupREST.apiREST.note(idEvento, teamsVotations.getId(), note).enqueue(new Callback<Note>() {
-                       @Override
-                       public void onResponse(Call<Note> call, Response<Note> response) {
+                    try {
 
-                           if (response.isSuccessful()) {
-                               Toast.makeText(RatingActivity.this, "sucesso", Toast.LENGTH_SHORT).show();
-                           }
+                        SetupREST.apiREST.note(idEvent, teamsVotations.getId(), note).enqueue(new Callback<Note>() {
+                            @Override
+                            public void onResponse(Call<Note> call, Response<Note> response) {
 
-                       }
+                                Toast.makeText(RatingActivity.this, "Sua nota foi enviada para validação", Toast.LENGTH_SHORT).show();
 
-                       @Override
-                       public void onFailure(Call<Note> call, Throwable t) {
+                            }
 
-                       }
-                   });
+                            @Override
+                            public void onFailure(Call<Note> call, Throwable t) {
+
+                            }
+                        });
+
+                    }catch (Exception e) {
+
+                    }
+
+                } else {
+
+                    if (level == 0) {
+                        Toast.makeText(RatingActivity.this, "Você deve atribuir uma nota de 1 a 5", Toast.LENGTH_LONG).show();
+                    }
+
+                    if (Active == false) {
+                        Toast.makeText(RatingActivity.this, "O evento ainda não está disponivel para votação!", Toast.LENGTH_SHORT).show();
+                    }
 
 
 
@@ -140,7 +148,6 @@ public class RatingActivity extends AppCompatActivity {
         }
         return imei;
     }
-
 
 
 }
