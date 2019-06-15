@@ -22,9 +22,6 @@ import java.util.List;
 public class EquipesAdapter extends RecyclerView.Adapter<EquipesAdapter.EquipesViewHolder> {
 
     private Context context;
-    private TextView equipeName;
-    private ImageView equipeLogo;
-    private TextView equipeDescription;
     private List<Equipe> equipeList;
 
     public EquipesAdapter(Context context) {
@@ -41,10 +38,12 @@ public class EquipesAdapter extends RecyclerView.Adapter<EquipesAdapter.EquipesV
 
     @Override
     public void onBindViewHolder(@NonNull EquipesViewHolder equipesViewHolder, int i) {
-        Equipe equipe = equipeList.get(i);
-        Picasso.get().load(equipe.getLogo()).into(equipeLogo);
-        equipeDescription.setText(equipe.getDescription());
-        equipeName.setText(equipe.getName());
+        final Equipe equipe = equipeList.get(i);
+        Picasso.get().load(equipe.getLogo()).into(equipesViewHolder.equipeLogo);
+        equipesViewHolder.equipeDescription.setMaxLines(3);
+        equipesViewHolder.equipeDescription.setText(equipe.getDescription());
+
+        equipesViewHolder.equipeName.setText(equipe.getName());
 
 
 
@@ -74,12 +73,18 @@ public class EquipesAdapter extends RecyclerView.Adapter<EquipesAdapter.EquipesV
     }
 
     class EquipesViewHolder extends RecyclerView.ViewHolder {
+
+        private TextView equipeName;
+        private ImageView equipeLogo;
+        private TextView equipeDescription;
+
         public EquipesViewHolder(@NonNull View itemView) {
             super(itemView);
 
             equipeDescription = itemView.findViewById(R.id.textViewEquipeDescription);
             equipeLogo = itemView.findViewById(R.id.imageViewLogoEquipe);
             equipeName = itemView.findViewById(R.id.textViewEquipeName);
+
 
 
 

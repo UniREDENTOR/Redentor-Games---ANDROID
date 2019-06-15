@@ -25,8 +25,7 @@ public class VotationTeamsAdapter extends RecyclerView.Adapter<VotationTeamsAdap
 
     private Context context;
     private List<TeamsVotations> teamsVotationslist;
-    private TextView textVotationNome, textVotationScore;
-    private ImageView imageViewLogo;
+
     private Event evento;
 
     public VotationTeamsAdapter(Context context, Event evento) {
@@ -46,14 +45,19 @@ public class VotationTeamsAdapter extends RecyclerView.Adapter<VotationTeamsAdap
     public void onBindViewHolder(@NonNull VotationViewHolder votationViewHolder, int i) {
 
         TeamsVotations teamsVotations = teamsVotationslist.get(i);
-        textVotationNome.setText(teamsVotations.getName());
-        textVotationScore.setText(teamsVotations.getAvg());
+        votationViewHolder.textVotationNome.setText(teamsVotations.getName());
+        votationViewHolder.textVotationScore.setText(teamsVotations.getAvg());
+
+        String votos = String.valueOf(teamsVotations.getVotes());
+
+        votationViewHolder.textVotos.setText(votos);
 
 
 
 
 
-        Picasso.get().load(teamsVotations.getLogo()).noFade().into(imageViewLogo);
+
+        Picasso.get().load(teamsVotations.getLogo()).noFade().into(votationViewHolder.imageViewLogo);
 
         votationViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,11 +94,15 @@ public class VotationTeamsAdapter extends RecyclerView.Adapter<VotationTeamsAdap
 
     class VotationViewHolder extends RecyclerView.ViewHolder {
 
+        private TextView textVotationNome, textVotationScore, textVotos;
+        private ImageView imageViewLogo;
+
         public VotationViewHolder(@NonNull View itemView) {
             super(itemView);
             textVotationNome = itemView.findViewById(R.id.txtVotationNameTeam);
             textVotationScore = itemView.findViewById(R.id.txtTeamScore);
             imageViewLogo = itemView.findViewById(R.id.imgTeamVotation);
+          //  textVotos = itemView.findViewById(R.id.txtTeamVotos);
 
         }
     }

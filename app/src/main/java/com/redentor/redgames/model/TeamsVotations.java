@@ -8,6 +8,7 @@ public class TeamsVotations implements Serializable {
     private String name;
     private String avg;
     private int id;
+    private int votes;
 
     public TeamsVotations() {
     }
@@ -43,4 +44,14 @@ public class TeamsVotations implements Serializable {
     public void setId(int id) {
         this.id = id;
     }
+
+    public int getVotes() {
+        return votes;
+    }
+
+    public void setVotes(int votes) {
+        this.votes = votes;
+    }
+
+
 }

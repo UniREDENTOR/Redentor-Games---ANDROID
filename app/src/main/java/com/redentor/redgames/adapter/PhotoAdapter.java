@@ -19,7 +19,7 @@ import java.util.List;
 public class PhotoAdapter extends RecyclerView.Adapter<PhotoAdapter.photoViewHolder> {
     private List<Photo> arrayListPhoto;
     private Context context;
-    private ImageView imageView;
+
 
     public PhotoAdapter( Context context) {
         this.arrayListPhoto = new ArrayList<>();
@@ -50,7 +50,7 @@ public class PhotoAdapter extends RecyclerView.Adapter<PhotoAdapter.photoViewHol
 
 
 
-        Picasso.get().load(photo.getUrl()).into(imageView);
+        Picasso.get().load(photo.getUrl()).into(photoViewHolder.imageView);
 
     }
 
@@ -70,6 +70,8 @@ public class PhotoAdapter extends RecyclerView.Adapter<PhotoAdapter.photoViewHol
 
 
     class photoViewHolder extends RecyclerView.ViewHolder  {
+
+        private ImageView imageView;
 
         public photoViewHolder(@NonNull View itemView) {
             super(itemView);

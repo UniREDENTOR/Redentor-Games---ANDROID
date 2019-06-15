@@ -12,7 +12,7 @@ import com.redentor.redgames.R;
 
 public class MembersAdapter extends RecyclerView.Adapter<MembersAdapter.MembersViewHolder> {
 
-    private TextView txtmembersName;
+
     private Context context;
     private String[] membersList;
 
@@ -35,7 +35,7 @@ public class MembersAdapter extends RecyclerView.Adapter<MembersAdapter.MembersV
     @Override
     public void onBindViewHolder(@NonNull MembersViewHolder membersViewHolder, int i) {
 
-        txtmembersName.setText(membersList[i]);
+        membersViewHolder.txtmembersName.setText(membersList[i]);
 
 
 
@@ -52,6 +52,8 @@ public class MembersAdapter extends RecyclerView.Adapter<MembersAdapter.MembersV
 
 
     class MembersViewHolder extends RecyclerView.ViewHolder {
+
+        private TextView txtmembersName;
 
         public MembersViewHolder(@NonNull View itemView) {
             super(itemView);

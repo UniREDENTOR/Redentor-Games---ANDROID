@@ -21,8 +21,7 @@ public class RankAdapter extends RecyclerView.Adapter<RankAdapter.RankViewHolder
 
     private Context context;
     private List<Rank> listRank;
-    private TextView nameRank, positionRank, scoreRank;
-    private ImageView logoRank;
+
 
     public RankAdapter(Context context) {
         this.context = context;
@@ -42,12 +41,12 @@ public class RankAdapter extends RecyclerView.Adapter<RankAdapter.RankViewHolder
     public void onBindViewHolder(@NonNull RankViewHolder rankViewHolder, int i) {
 
         Rank rank = listRank.get(i);
-        nameRank.setText(rank.getName());
+        rankViewHolder.nameRank.setText(rank.getName());
         String position = String.valueOf(rank.getPosition());
         String score = String.valueOf(rank.getScore());
-        positionRank.setText(position + "º");
-       scoreRank.setText(score);
-        Picasso.get().load(rank.getLogo()).noFade().into(logoRank);
+        rankViewHolder.positionRank.setText(position + "º");
+        rankViewHolder.scoreRank.setText(score);
+        Picasso.get().load(rank.getLogo()).noFade().into(rankViewHolder.logoRank);
 
 
     }
@@ -68,6 +67,9 @@ public class RankAdapter extends RecyclerView.Adapter<RankAdapter.RankViewHolder
     }
 
     class RankViewHolder extends RecyclerView.ViewHolder {
+
+        private TextView nameRank, positionRank, scoreRank;
+        private ImageView logoRank;
 
 
         public RankViewHolder(@NonNull View itemView) {

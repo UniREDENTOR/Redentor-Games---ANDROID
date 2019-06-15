@@ -21,7 +21,7 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHol
 
     private Context context;
     private List<Event> listEvent;
-    private TextView txtNameEvent, txtDescriptionEvent;
+
 
     public EventAdapter(Context context) {
         this.context = context;
@@ -41,8 +41,8 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHol
     public void onBindViewHolder(@NonNull EventViewHolder eventViewHolder, int i) {
         Event event = listEvent.get(i);
 
-        txtNameEvent.setText(event.getName());
-        txtDescriptionEvent.setText(event.getDescription());
+        eventViewHolder.txtNameEvent.setText(event.getName());
+        eventViewHolder.txtDescriptionEvent.setText(event.getDescription());
 
 
         eventViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -76,6 +76,8 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHol
     }
 
     class EventViewHolder extends RecyclerView.ViewHolder {
+
+        private TextView txtNameEvent, txtDescriptionEvent;
 
 
         public EventViewHolder(@NonNull View itemView) {

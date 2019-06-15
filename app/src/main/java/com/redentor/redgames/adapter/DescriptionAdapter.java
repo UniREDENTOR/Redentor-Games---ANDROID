@@ -18,7 +18,7 @@ import java.util.List;
 
 public class DescriptionAdapter extends RecyclerView.Adapter<DescriptionAdapter.GameViewHolder> {
 
-    private TextView txtNome, txtDescricao;
+
     private List<GameDescription> listDescriptionAdapter;
     private Context context;
 
@@ -44,8 +44,9 @@ public class DescriptionAdapter extends RecyclerView.Adapter<DescriptionAdapter.
 
         GameDescription gameDescription = listDescriptionAdapter.get(i);
 
-        txtNome.setText(gameDescription.getName());
-        txtDescricao.setText(gameDescription.getDescription());
+        gameViewHolder.txtNome.setText(gameDescription.getName());
+        gameViewHolder.txtDescricao.setMaxLines(3);
+        gameViewHolder.txtDescricao.setText(gameDescription.getDescription());
 
         gameViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,6 +78,8 @@ public class DescriptionAdapter extends RecyclerView.Adapter<DescriptionAdapter.
     }
 
     class GameViewHolder extends RecyclerView.ViewHolder {
+
+        private TextView txtNome, txtDescricao;
 
         public GameViewHolder(@NonNull View itemView) {
             super(itemView);
