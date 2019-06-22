@@ -102,7 +102,7 @@ public class VotationTeamsAdapter extends RecyclerView.Adapter<VotationTeamsAdap
             textVotationNome = itemView.findViewById(R.id.txtVotationNameTeam);
             textVotationScore = itemView.findViewById(R.id.txtTeamScore);
             imageViewLogo = itemView.findViewById(R.id.imgTeamVotation);
-          //  textVotos = itemView.findViewById(R.id.txtTeamVotos);
+            textVotos = itemView.findViewById(R.id.txtTeamVotos);
 
         }
     }
